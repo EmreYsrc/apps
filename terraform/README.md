@@ -51,7 +51,7 @@ To deploy the infrastructure, follow these steps:
 
 Clone the repository:
 
-**git clone** (https://github.com/EmreYsrc/apps.git)
+**git clone** (https://github.com/EmreYsrc/apps.git) 
 
 - cd terraform
 
@@ -71,18 +71,16 @@ This will create the VPC, AWS EKS cluster, AWS RDS, EBS CSI Driver, AWS Load Bal
 Here is an overview of the key files included in this project:
 
 - argocd.tf: Defines the ArgoCD setup and deployment on the EKS cluster.
+- autoscaler.tf: Configures the Kubernetes cluster autoscaler for dynamic resource scaling.
 - aws-ingress-class.tf: Defines the AWS-specific ingress class for managing external traffic routing in Kubernetes.
 - aws-lbc-datasources.tf: Datasources configuration for AWS Load Balancer Controller.
 - aws-lbc-iam-policy-and-role.tf: IAM policies and roles for AWS Load Balancer Controller.
-- aws-lbc-install.tf: Create AWS Load Balancer Controller
 - cloudwatch.tf: Configures AWS CloudWatch for monitoring EKS and related resources.
 - ebs-csi-datasources.tf: Terraform data sources for EBS (Elastic Block Store) integration with Kubernetes.
-- ebs-csi-iam-policy-and-role.tf: IAM policies and roles for EBS.
-- ebs-csi-install-using-helm.tf: Create AWS Elastic Block Store driver.
 - eks-cluster.tf: Main configuration for setting up an AWS EKS cluster.
 - eks-node-group.tf: Defines node groups (worker nodes) in the EKS cluster.
 - external-secret-iam-policy-role.tf: Sets up IAM roles and policies specific to external secret serviceaccount.
-- eks-iam-roles-for-eks-cluster.tf: Sets up IAM roles and policies specific to the EKS cluster.
+- eks-iamroles-for-eks-cluster.tf: Sets up IAM roles and policies specific to the EKS cluster.
 - eks-cluster-auto-scaler-iam.tf: IAM roles and policies for the Kubernetes cluster autoscaler.
 - hpa.tf: Defines the Horizontal Pod Autoscaler configuration to scale pods based on CPU or memory usage.
 - kubernetes-configmap.tf: Sets up Kubernetes ConfigMaps, used for injecting configuration data into pods.
