@@ -1,0 +1,28 @@
+{
+    "agent": {
+      "metrics_collection_interval": 60,
+      "logfile": "/opt/aws/amazon-cloudwatch-agent/logs/amazon-cloudwatch-agent.log"
+    },
+    "logs": {
+      "logs_collected": {
+        "files": {
+          "collect_list": [
+            {
+              "file_path": "/var/log/kube-apiserver-audit.log",
+              "log_group_name": "/aws/eks/cluster/apiserver",
+              "log_stream_name": "{instance_id}-kube-apiserver-audit",
+              "timezone": "UTC"
+            },
+            {
+              "file_path": "/var/log/containers/*.log",
+              "log_group_name": "/aws/eks/cluster/application-logs",
+              "log_stream_name": "{instance_id}-containers",
+              "timezone": "UTC"
+            }
+          ]
+        }
+      }
+    }
+  }
+
+  

@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stress-deployment
+  namespace : argocd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stress
+  template:
+    metadata:
+      labels:
+        app: stress
+    spec:
+      containers:
+      - name: stress
+        image: polinux/stress
+        args:
+        - "stress"
+        - "--vm"
+        - "2"  # Increased number of VM workers
+        - "--vm-bytes"
+        - "500M"  # Increased memory per VM worker
+        - "--cpu"
+        - "1"  # Increased number of CPU workers
+        - "--timeout"
+        - "600s"  # Optional: Increase the duration of stress

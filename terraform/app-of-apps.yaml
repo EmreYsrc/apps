@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: app-of-apps
+  namespace: argocd
+spec:
+  project: default
+  syncPolicy:
+    automated:
+      prune: true
+      allowEmpty: true
+      selfHeal: true
+  destination:
+    namespace: argocd
+    name: in-cluster
+  source:
+    directory:
+      recurse: true
+    repoURL: https://github.com/EmreYsrc/apps.git
+    targetRevision: main
+    path: apps/app
+
