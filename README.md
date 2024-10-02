@@ -125,7 +125,7 @@ Here is an overview of the key files included in this project:
 
 ![alt text](images/Certificate.jpg)
 
-- After AWS Load balancer I created an A record on the Route53.
+- After AWS Load balancer created , then I created an A record on the Route53.
 
 ![alt text](images/Route53.jpg)
 
