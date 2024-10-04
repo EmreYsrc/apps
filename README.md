@@ -135,11 +135,11 @@ Here is an overview of the key files included in this project:
 
 ![alt text](images/Node_group_subnet.jpg)
 
-- After EKS cluster creation completed, I deployed argocd on the cluster. I configured ArgoCD to automatically apply changes to the applications whenever a commit is made to an application repository.
+- After EKS cluster creation completed, I deployed argocd on the cluster. I configured ArgoCD to automatically apply changes to the applications whenever a commit is made to an application repository. 
 
 ![alt text](images/ArgoCD_1.jpg)
   
-- Then I created an application wich name is app-of-app to bind my applications.
+- Then I created an application wich name is app-of-app to bind my applications. When external-secret deployment up and running I deploy manually secret store and external store with this command kubectl apply -f https://raw.githubusercontent.com/EmreYsrc/apps/refs/heads/main/apps/external-secret/external-secret.yaml
 
 ![alt text](images/App-of-apps.jpg)
 
