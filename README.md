@@ -139,7 +139,7 @@ Here is an overview of the key files included in this project:
 
 ![alt text](images/ArgoCD_1.jpg)
   
-- Then I created an application wich name is app-of-app to bind my applications. When external-secret deployment up and running I deploy manually secret store and external store with this command kubectl apply -f https://raw.githubusercontent.com/EmreYsrc/apps/refs/heads/main/apps/external-secret/external-secret.yaml
+- Then I created an application wich name is app-of-app to bind my applications. When external-secret deployment up and running I deploy manually secret store and external secret with this command kubectl apply -f https://raw.githubusercontent.com/EmreYsrc/apps/refs/heads/main/apps/external-secret/external-secret.yaml
 
 ![alt text](images/App-of-apps.jpg)
 
