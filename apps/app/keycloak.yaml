@@ -32,6 +32,7 @@ metadata:
       arn:aws:acm:eu-west-1:187751842432:certificate/8ee6a4aa-99f8-4a9b-bacd-ac0eaf89516e
     alb.ingress.kubernetes.io/group.name: test-eks
     alb.ingress.kubernetes.io/healthcheck-interval-seconds: "20"
+    alb.ingress.kubernetes.io/custom-http-headers: "Content-Security-Policy=frame-src 'self' http://keycloak.test.voltran.link"
     alb.ingress.kubernetes.io/healthcheck-path: /dummy-path
     alb.ingress.kubernetes.io/healthcheck-port: "8080"
     alb.ingress.kubernetes.io/inbound-cidrs: 0.0.0.0/0
