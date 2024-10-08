@@ -26,5 +26,58 @@ rules:
     resources: [ "*" ]
     resourceNames: [ "{{ template "kubernetes-dashboard.web.configMap.settings.name" . }}" ]
     verbs: [ "get", "update" ]
-
+  - verbs:
+      - get
+      - update
+    apiGroups:
+      - ''
+    resources:
+      - '*'
+    resourceNames:
+      - kubernetes-dashboard-web-settings
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - apps
+    resources:
+      - statefulsets
+      - deployments
+      - replicasets
+      - replicationcontrollers
+      - cronjobs
+      - pods
+      - pods/logs
+      - daemonsets
+      - events
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - batch
+    resources:
+      - jobs
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ''
+    resources:
+      - namespaces
+  - verbs:
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ''
+    resources:
+      - pods
+      - pods/logs
+      - events
+  - apiGroups: [""] 
+    resources: ["pods/log"]
+    verbs: ["get", "watch", "list"]
 {{- end -}}
